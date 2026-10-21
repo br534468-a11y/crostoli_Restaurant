@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8491285101086553"
-       crossorigin="anonymous"></script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1677b8">
@@ -94,18 +90,25 @@
         <div class="gem">◆</div>
       </div>
 
-      <h2 class="section-title">◈ Gana gemas</h2>
+
+      <h2 class="section-title">◈ Publicidad</h2>
       <div class="adbox">
         <div class="ad-icon">▶</div>
-        <h3>Actividad publicitaria</h3>
-        <p>Simulación local de 15 segundos. Las gemas son ficticias, no tienen valor monetario y no representan visualizaciones publicitarias válidas.</p>
-        <div class="timer" id="timer">00:15</div>
-        <button class="primary" id="startAd">Iniciar demostración</button>
-        <div class="status hidden" id="autoCreditNotice" style="display:none">Gemas acreditadas automáticamente a tu cuenta.</div>
-        <div class="notice">La acreditación automática real debe activarse únicamente cuando el proveedor de anuncios confirme una visualización válida mediante una notificación segura del servidor.</div>
+        <h3>Anuncio disponible</h3>
+        <p>Pulsa el botón para mostrar el espacio publicitario. La publicidad no otorga gemas ni requiere hacer clic en el anuncio.</p>
+        <button class="primary" id="startAd" type="button">Iniciar anuncio</button>
+        <div id="adArea" class="hidden" style="margin-top:16px">
+          <ins class="adsbygoogle"
+               style="display:block; min-height:100px"
+               data-ad-client="ca-pub-8491285101086553"
+               data-ad-slot="REEMPLAZA_CON_ID_DEL_BLOQUE"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <p class="notice" id="adHelp">Si no aparece un anuncio, comprueba que el dominio esté aprobado y que el ID del bloque sea correcto.</p>
+        </div>
       </div>
 
-      <h2 class="section-title">◇ Canje de recompensas</h2>
+<h2 class="section-title">◇ Canje de recompensas</h2>
       <div class="reward"><span>▣ Recarga Telcel de $100 MXN</span><strong>1,000 gemas</strong></div>
       <div class="field">
         <label for="telNumber">Número Telcel de 10 dígitos</label>
@@ -121,21 +124,19 @@
       <div id="history" class="status"></div>
       <button class="secondary" id="logoutBtn" style="margin-top:17px">Cerrar sesión</button>
     </section>
-    <p class="footer">TELERED INTERNET · Más conexión, más oportunidades, más beneficios.<br>Las gemas son unidades virtuales; consulta las reglas y condiciones antes de solicitar un canje.</p>
+    <p class="footer">TELERED INTERNET · Más conexión, más oportunidades, más beneficios.
+    Las cuentas y gemas de esta versión se guardan en este navegador.<br>Las gemas son unidades virtuales; consulta las reglas y condiciones antes de solicitar un canje.</p>
   </main>
 
 <script>
-  // DEMOSTRACIÓN LOCAL. No usar para cuentas, saldos ni recompensas reales.
+  // Versión local: las cuentas y los saldos se guardan en este navegador.
   // Sustituye el marcador por tu WhatsApp oficial: código de país + número, sin + ni espacios.
   const WHATSAPP_NUMBER = "52XXXXXXXXXX";
-  const STORAGE_KEY = "telered_demo_account_v2";
+  const STORAGE_KEY = "telered_account_v3";
   const $ = id => document.getElementById(id);
 
   let account = null;
-  let countdown = null;
-  let seconds = 15;
-
-  function showBalance() {
+function showBalance() {
     $("gemBalance").textContent = Number(account?.gems || 0).toLocaleString("es-MX");
   }
 
@@ -170,7 +171,7 @@
     history.textContent = entries.length ? entries.join(" · ") : "Todavía no hay movimientos.";
   }
 
-  // Recupera la cuenta de demostración del navegador.
+  // Recupera la cuenta guardada en este navegador.
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
     if (saved && typeof saved.code === "string" &&
@@ -213,33 +214,26 @@
     showPortal();
   });
 
+  // Al pulsar el botón se revela y solicita el bloque publicitario.
+  let adRequested = false;
   $("startAd").addEventListener("click", () => {
-    if (countdown || !account) return;
-    seconds = 15;
-    $("startAd").disabled = true;
-    $("startAd").classList.add("hidden");
-    $("autoCreditNotice").classList.add("hidden");
-    $("timer").textContent = "00:15";
+    const area = $("adArea");
+    area.classList.remove("hidden");
+    const slot = area.querySelector(".adsbygoogle");
 
-    countdown = window.setInterval(() => {
-      seconds -= 1;
-      $("timer").textContent = `00:${String(Math.max(seconds, 0)).padStart(2, "0")}`;
+    if (!slot || slot.dataset.adSlot === "REEMPLAZA_CON_ID_DEL_BLOQUE") {
+      $("adHelp").textContent = "Falta el ID del bloque. En AdSense entra en Anuncios > Por bloque de anuncios > Anuncios display > Obtener código y sustituye REEMPLAZA_CON_ID_DEL_BLOQUE.";
+      return;
+    }
 
-      if (seconds <= 0) {
-        window.clearInterval(countdown);
-        countdown = null;
-        $("timer").textContent = "Actividad finalizada";
-        account.gems += 10;
-        account.movements.unshift("+10 gemas de demostración (sin valor monetario)");
-        save();
-        showBalance();
-        $("autoCreditNotice").textContent = "✓ Se añadieron 10 gemas ficticias de prueba.";
-        $("autoCreditNotice").style.display = "block";
-        $("autoCreditNotice").classList.remove("hidden");
-        $("startAd").disabled = false;
-        $("startAd").classList.remove("hidden");
+    if (!adRequested) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        adRequested = true;
+      } catch (error) {
+        $("adHelp").textContent = "AdSense no pudo cargar el anuncio. Comprueba la aprobación del sitio, el ID del bloque y que no haya un bloqueador de anuncios.";
       }
-    }, 1000);
+    }
   });
 
   $("redeemBtn").addEventListener("click", () => {
@@ -261,24 +255,17 @@
     const message = `Hola, quiero solicitar una recarga Telcel de $100 MXN. Código: ${account.code}. Número Telcel: ${phone}. Gemas disponibles: ${account.gems}.`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     $("status").style.display = "block";
-    $("status").textContent = "Se abrirá WhatsApp. Esta demostración no descuenta gemas ni confirma una recarga.";
+    $("status").textContent = "Se abrirá WhatsApp. La solicitud debe revisarse y la recarga confirmarse por separado.";
     window.open(url, "_blank", "noopener,noreferrer");
   });
 
   $("historyBtn").addEventListener("click", renderHistory);
 
   $("logoutBtn").addEventListener("click", () => {
-    if (countdown) {
-      window.clearInterval(countdown);
-      countdown = null;
-    }
     try { localStorage.removeItem(STORAGE_KEY); } catch (error) {}
     account = null;
     $("portal").classList.add("hidden");
     $("loginCard").classList.remove("hidden");
-    $("timer").textContent = "00:15";
-    $("startAd").disabled = false;
-    $("startAd").classList.remove("hidden");
     $("userCode").value = "";
     $("day").value = "";
     $("month").value = "";
