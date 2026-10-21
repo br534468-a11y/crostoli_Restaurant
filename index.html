@@ -1,212 +1,213 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1677b8">
-  <title>TELERED INTERNET | Gemas y recompensas</title>
-  <style>
-    :root{--blue:#187db8;--blue2:#11699f;--ink:#263746;--muted:#7b8992;--bg:#eef5fa;--line:#e1e9ef;--white:#fff;--green:#20a765}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(135deg,#edf5fb,#f8fbfd);min-height:100vh}
-    .topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100% - 1050px)/2));}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.4px;color:var(--blue);font-size:18px}
-    .brand-mark{width:38px;height:38px;border-radius:12px;background:var(--blue);display:grid;place-items:center;color:#fff;font-size:21px}
-    .tag{font-size:12px;color:var(--muted);font-weight:600}
-    .wrap{width:min(100% - 28px,720px);margin:34px auto 50px}
-    .card{background:rgba(255,255,255,.96);border:1px solid #e8eef3;border-radius:26px;padding:30px;box-shadow:0 16px 45px #294b6410}
-    .hero{text-align:center;margin-bottom:25px}
-    .hero-icon{font-size:42px;margin-bottom:9px}
-    h1{font-size:clamp(25px,5vw,34px);margin:0 0 9px;color:#263746}
-    .subtitle{color:var(--muted);line-height:1.55;margin:0 auto;max-width:510px}
-    .balance{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(115deg,#167db9,#145f99);color:white;padding:18px 20px;border-radius:18px;margin:24px 0}
-    .balance small{display:block;opacity:.85;margin-bottom:5px}
-    .balance strong{font-size:30px}
-    .gem{font-size:31px}
-    .section-title{font-size:18px;margin:25px 0 13px}
-    label{display:block;font-size:13px;font-weight:700;color:#6d7d87;margin:0 0 8px;text-transform:uppercase;letter-spacing:.45px}
-    input{width:100%;padding:15px 14px;border:1px solid #dce5eb;border-radius:12px;font-size:16px;background:#fff;color:var(--ink);outline:none}
-    input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #187db81c}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-    .field{margin:15px 0}
-    button,.button{border:0;border-radius:12px;padding:15px 18px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px}
-    .primary{background:var(--blue);color:white;width:100%}
-    .primary:hover{background:var(--blue2)}
-    .secondary{background:#edf5fa;color:var(--blue);width:100%}
-    .whatsapp{background:var(--green);color:white;width:100%}
-    .adbox{border:1px dashed #b8cbd8;background:#f7fafc;border-radius:17px;padding:20px;text-align:center}
-    .ad-icon{font-size:34px}
-    .adbox h3{margin:8px 0}
-    .adbox p{color:var(--muted);line-height:1.5;margin:7px 0 15px}
-    .timer{font-size:22px;font-weight:800;color:var(--blue);margin:12px 0}
-    .notice{font-size:12px;color:#7e8b93;line-height:1.5;margin-top:13px}
-    .reward{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);gap:12px}
-    .reward:last-child{border-bottom:0}
-    .reward strong{color:#d18b16}
-    .status{padding:12px 14px;border-radius:12px;background:#f0f7fb;color:#416477;font-size:13px;line-height:1.45;margin-top:13px;display:none}
-    .hidden{display:none!important}
-    .footer{text-align:center;color:#87949c;font-size:12px;line-height:1.6;margin:20px 10px}
-    .pill{font-size:11px;font-weight:700;color:#9a6812;background:#fff4d9;border-radius:20px;padding:6px 9px}
-    @media(max-width:520px){.card{padding:22px 18px;border-radius:21px}.grid{grid-template-columns:1fr}.balance{padding:16px}.topbar{padding:0 16px}.tag{display:none}}
-  </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="theme-color" content="#1677b8">
+ <title>TELERED INTERNET | Gemas y recompensas</title>
+ <!-- Google AdSense -->
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8491285101086553" crossorigin="anonymous"></script>
+ <style>
+ :root{--blue:#187db8;--blue2:#11699f;--ink:#263746;--muted:#7b8992;--bg:#eef5fa;--line:#e1e9ef;--white:#fff;--green:#20a765}
+ *{box-sizing:border-box}
+ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(135deg,#edf5fb,#f8fbfd);min-height:100vh}
+ .topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100% - 1050px)/2));}
+ .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.4px;color:var(--blue);font-size:18px}
+ .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,#d8bd7a,#9b7838);display:grid;place-items:center;color:#172b3a;font-size:21px;box-shadow:0 4px 12px #9b783833}
+ .tag{font-size:12px;color:var(--muted);font-weight:600}
+ .wrap{width:min(100% - 28px,720px);margin:34px auto 50px}
+ .card{background:rgba(255,255,255,.96);border:1px solid #e8eef3;border-radius:26px;padding:30px;box-shadow:0 16px 45px #294b6410}
+ .hero{text-align:center;margin-bottom:25px}
+ .hero-icon{width:66px;height:66px;margin:0 auto 14px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(145deg,#f8f1df,#e7d5a7);color:#8a6b32;font-size:31px;box-shadow:inset 0 1px 0 #fff,0 7px 18px #9b783822}
+ h1{font-size:clamp(25px,5vw,34px);margin:0 0 9px;color:#263746}
+ .subtitle{color:var(--muted);line-height:1.55;margin:0 auto;max-width:510px}
+ .balance{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(115deg,#167db9,#145f99);color:white;padding:18px 20px;border-radius:18px;margin:24px 0}
+ .balance small{display:block;opacity:.85;margin-bottom:5px}
+ .balance strong{font-size:30px}
+ .gem{font-size:31px;color:#f0d58d;filter:drop-shadow(0 3px 5px #071d2c55)}
+ .section-title{font-size:18px;margin:25px 0 13px}
+ label{display:block;font-size:13px;font-weight:700;color:#6d7d87;margin:0 0 8px;text-transform:uppercase;letter-spacing:.45px}
+ input{width:100%;padding:15px 14px;border:1px solid #dce5eb;border-radius:12px;font-size:16px;background:#fff;color:var(--ink);outline:none}
+ input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #187db81c}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+ .field{margin:15px 0}
+ button,.button{border:0;border-radius:12px;padding:15px 18px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px}
+ .primary{background:var(--blue);color:white;width:100%}
+ .primary:hover{background:var(--blue2)}
+ .secondary{background:#edf5fa;color:var(--blue);width:100%}
+ .whatsapp{background:var(--green);color:white;width:100%}
+ .adbox{border:1px dashed #b8cbd8;background:#f7fafc;border-radius:17px;padding:20px;text-align:center}
+ .ad-icon{font-size:31px;color:#a88748}
+ .adbox h3{margin:8px 0}
+ .adbox p{color:var(--muted);line-height:1.5;margin:7px 0 15px}
+ .timer{font-size:22px;font-weight:800;color:var(--blue);margin:12px 0}
+ .notice{font-size:12px;color:#7e8b93;line-height:1.5;margin-top:13px}
+ .reward{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);gap:12px}
+ .reward:last-child{border-bottom:0}
+ .reward strong{color:#d18b16}
+ .status{padding:12px 14px;border-radius:12px;background:#f0f7fb;color:#416477;font-size:13px;line-height:1.45;margin-top:13px;display:none}
+ .hidden{display:none!important}
+ .footer{text-align:center;color:#87949c;font-size:12px;line-height:1.6;margin:20px 10px}
+ .pill{font-size:11px;font-weight:700;color:#9a6812;background:#fff4d9;border-radius:20px;padding:6px 9px}
+ @media(max-width:520px){.card{padding:22px 18px;border-radius:21px}.grid{grid-template-columns:1fr}.balance{padding:16px}.topbar{padding:0 16px}.tag{display:none}}
+ </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="brand-mark">✦</span><span>TELERED INTERNET</span></div>
-    <span class="tag">TECNOLOGÍA QUE IMPULSA TU ECONOMÍA</span>
-  </header>
+ <header class="topbar">
+ <div class="brand"><span class="brand-mark">◆</span><span>TELERED INTERNET</span></div>
+ <span class="tag">TECNOLOGÍA QUE IMPULSA TU ECONOMÍA</span>
+ </header>
 
-  <main class="wrap">
-    <section class="card" id="loginCard">
-      <div class="hero">
-        <div class="hero-icon">🌐</div>
-        <h1>Bienvenido a TELERED</h1>
-        <p class="subtitle">Participa, acumula gemas virtuales y solicita recompensas. Tu tiempo en línea puede convertirse en beneficios.</p>
-      </div>
-      <div class="field">
-        <label for="userCode">Código de usuario</label>
-        <input id="userCode" placeholder="Ej. TEL-1025" autocomplete="username">
-      </div>
-      <div class="field">
-        <label>Fecha de nacimiento</label>
-        <div class="grid">
-          <input id="day" type="number" min="1" max="31" placeholder="Día">
-          <input id="month" type="number" min="1" max="12" placeholder="Mes">
-          <input id="year" type="number" min="1900" max="2100" placeholder="Año">
-        </div>
-      </div>
-      <button class="primary" id="loginBtn">🔐 Acceder al portal</button>
-      <p class="notice">Demostración: este acceso se guarda únicamente en este navegador. Para cuentas reales necesitas conectar una base de datos y un sistema seguro de autenticación.</p>
-    </section>
+ <main class="wrap">
+ <section class="card" id="loginCard">
+ <div class="hero">
+ <div class="hero-icon">⌘</div>
+ <h1>Bienvenido a TELERED</h1>
+ <p class="subtitle">Participa, acumula gemas virtuales y solicita recompensas. Tu tiempo en línea puede convertirse en beneficios.</p>
+ </div>
+ <div class="field">
+ <label for="userCode">Código de usuario</label>
+ <input id="userCode" placeholder="Ej. TEL-1025" autocomplete="username">
+ </div>
+ <div class="field">
+ <label>Fecha de nacimiento</label>
+ <div class="grid">
+ <input id="day" type="number" min="1" max="31" placeholder="Día">
+ <input id="month" type="number" min="1" max="12" placeholder="Mes">
+ <input id="year" type="number" min="1900" max="2100" placeholder="Año">
+ </div>
+ </div>
+ <button class="primary" id="loginBtn">◆ Acceder al portal</button>
+ <p class="notice">Demostración: este acceso se guarda únicamente en este navegador. Para cuentas reales necesitas conectar una base de datos y un sistema seguro de autenticación.</p>
+ </section>
 
-    <section class="card hidden" id="portal">
-      <div class="hero">
-        <div class="hero-icon">💎</div>
-        <h1>Tu portal de recompensas</h1>
-        <p class="subtitle">Mira las actividades disponibles, acumula gemas y consulta tus opciones de canje.</p>
-      </div>
-      <div class="balance">
-        <div><small>MI SALDO VIRTUAL</small><strong id="gemBalance">0</strong><div>gemas acumuladas</div></div>
-        <div class="gem">💎</div>
-      </div>
+ <section class="card hidden" id="portal">
+ <div class="hero">
+ <div class="hero-icon">◇</div>
+ <h1>Tu portal de recompensas</h1>
+ <p class="subtitle">Mira las actividades disponibles, acumula gemas y consulta tus opciones de canje.</p>
+ </div>
+ <div class="balance">
+ <div><small>MI SALDO VIRTUAL</small><strong id="gemBalance">0</strong><div>gemas acumuladas</div></div>
+ <div class="gem">◆</div>
+ </div>
 
-      <h2 class="section-title">📺 Gana gemas</h2>
-      <div class="adbox">
-        <div class="ad-icon">▶️</div>
-        <h3>Actividad publicitaria</h3>
-        <p>En esta demostración puedes probar el contador de una actividad. Las gemas de prueba no tienen valor monetario.</p>
-        <div class="timer" id="timer">00:15</div>
-        <button class="primary" id="startAd">Iniciar demostración</button>
-        <button class="secondary hidden" id="claimBtn" style="margin-top:9px">✨ Recibir 10 gemas de prueba</button>
-        <div class="notice">En producción, sustituye este módulo por un proveedor de anuncios recompensados que autorice expresamente este uso. No simules impresiones ni recompenses clics en anuncios.</div>
-      </div>
+ <h2 class="section-title">◈ Gana gemas</h2>
+ <div class="adbox">
+ <div class="ad-icon">▶</div>
+ <h3>Actividad publicitaria</h3>
+ <p>En esta demostración puedes probar el contador de una actividad. Las gemas de prueba no tienen valor monetario.</p>
+ <div class="timer" id="timer">00:15</div>
+ <button class="primary" id="startAd">Iniciar demostración</button>
+ <div class="status hidden" id="autoCreditNotice" style="display:none">Gemas acreditadas automáticamente a tu cuenta.</div>
+ <div class="notice">La acreditación automática real debe activarse únicamente cuando el proveedor de anuncios confirme una visualización válida mediante una notificación segura del servidor.</div>
+ </div>
 
-      <h2 class="section-title">🎁 Canje de recompensas</h2>
-      <div class="reward"><span>📱 Recarga Telcel de $100 MXN</span><strong>1,000 gemas</strong></div>
-      <div class="field">
-        <label for="telNumber">Número Telcel de 10 dígitos</label>
-        <input id="telNumber" inputmode="numeric" maxlength="10" placeholder="Ej. 3511234567">
-      </div>
-      <button class="whatsapp" id="redeemBtn"><span>☘</span> Solicitar recarga por WhatsApp</button>
-      <div class="status" id="status"></div>
-      <p class="notice">La solicitud se enviará por WhatsApp para revisión. El canje real requiere verificar el saldo, confirmar la disponibilidad y realizar la recarga manualmente o mediante un proveedor.</p>
+ <h2 class="section-title">◇ Canje de recompensas</h2>
+ <div class="reward"><span>▣ Recarga Telcel de $100 MXN</span><strong>1,000 gemas</strong></div>
+ <div class="field">
+ <label for="telNumber">Número Telcel de 10 dígitos</label>
+ <input id="telNumber" inputmode="numeric" maxlength="10" placeholder="Ej. 3511234567">
+ </div>
+ <button class="whatsapp" id="redeemBtn"><span>◉</span> Solicitar recarga por WhatsApp</button>
+ <div class="status" id="status"></div>
+ <p class="notice">La solicitud se enviará por WhatsApp para revisión. El canje real requiere verificar el saldo, confirmar la disponibilidad y realizar la recarga manualmente o mediante un proveedor.</p>
 
-      <h2 class="section-title">📋 Mi cuenta</h2>
-      <div class="reward"><span>Código de usuario</span><strong id="profileCode">—</strong></div>
-      <div class="reward"><span>Historial</span><button class="secondary" id="historyBtn" style="width:auto;padding:9px 12px;font-size:13px">Ver movimientos</button></div>
-      <div id="history" class="status"></div>
-      <button class="secondary" id="logoutBtn" style="margin-top:17px">Cerrar sesión</button>
-    </section>
-    <p class="footer">TELERED INTERNET · Más conexión, más oportunidades, más beneficios.<br>Las gemas son unidades virtuales; consulta las reglas y condiciones antes de solicitar un canje.</p>
-  </main>
+ <h2 class="section-title">▤ Mi cuenta</h2>
+ <div class="reward"><span>Código de usuario</span><strong id="profileCode">—</strong></div>
+ <div class="reward"><span>Historial</span><button class="secondary" id="historyBtn" style="width:auto;padding:9px 12px;font-size:13px">Ver movimientos</button></div>
+ <div id="history" class="status"></div>
+ <button class="secondary" id="logoutBtn" style="margin-top:17px">Cerrar sesión</button>
+ </section>
+ <p class="footer">TELERED INTERNET · Más conexión, más oportunidades, más beneficios.<br>Las gemas son unidades virtuales; consulta las reglas y condiciones antes de solicitar un canje.</p>
+ </main>
 
 <script>
-  // DEMOSTRACIÓN LOCAL: no es un sistema de cuentas ni una base de datos real.
-  // Cambia este número por el WhatsApp oficial en formato internacional, sin + ni espacios.
-  const WHATSAPP_NUMBER = "52XXXXXXXXXX";
-  const STORAGE_KEY = "telered_demo_account";
-  let countdown = null;
-  let seconds = 15;
-  let movements = [];
+ // DEMOSTRACIÓN LOCAL: no es un sistema de cuentas ni una base de datos real.
+ // Cambia este número por el WhatsApp oficial en formato internacional, sin + ni espacios.
+ const WHATSAPP_NUMBER = "52XXXXXXXXXX";
+ const STORAGE_KEY = "telered_demo_account";
+ let countdown = null;
+ let seconds = 15;
+ let movements = [];
 
-  const $ = id => document.getElementById(id);
-  let account = null;
+ const $ = id => document.getElementById(id);
+ let account = null;
 
-  function showBalance(){ $("gemBalance").textContent = (account?.gems || 0).toLocaleString("es-MX"); }
-  function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(account)); }
-  function showPortal(){
-    $("loginCard").classList.add("hidden");
-    $("portal").classList.remove("hidden");
-    $("profileCode").textContent = account.code;
-    showBalance();
-  }
+ function showBalance(){ $("gemBalance").textContent = (account?.gems || 0).toLocaleString("es-MX"); }
+ function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(account)); }
+ function showPortal(){
+ $("loginCard").classList.add("hidden");
+ $("portal").classList.remove("hidden");
+ $("profileCode").textContent = account.code;
+ showBalance();
+ }
 
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    if(saved && saved.code && Number.isFinite(saved.gems)){ account=saved; showPortal(); }
-  } catch(e) { localStorage.removeItem(STORAGE_KEY); }
+ try {
+ const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+ if(saved && saved.code && Number.isFinite(saved.gems)){ account=saved; showPortal(); }
+ } catch(e) { localStorage.removeItem(STORAGE_KEY); }
 
-  $("loginBtn").addEventListener("click",()=>{
-    const code=$("userCode").value.trim().toUpperCase();
-    const d=Number($("day").value), m=Number($("month").value), y=Number($("year").value);
-    if(!code || !d || !m || !y || d<1 || d>31 || m<1 || m>12 || y<1900 || y>2100){
-      alert("Completa tu código y una fecha de nacimiento válida."); return;
-    }
-    account={code,gems:0};
-    movements=[];
-    save(); showPortal();
-  });
+ $("loginBtn").addEventListener("click",()=>{
+ const code=$("userCode").value.trim().toUpperCase();
+ const d=Number($("day").value), m=Number($("month").value), y=Number($("year").value);
+ if(!code || !d || !m || !y || d<1 || d>31 || m<1 || m>12 || y<1900 || y>2100){
+ alert("Completa tu código y una fecha de nacimiento válida."); return;
+ }
+ account={code,gems:0};
+ movements=[];
+ save(); showPortal();
+ });
 
-  $("startAd").addEventListener("click",()=>{
-    if(countdown) return;
-    seconds=15;
-    $("startAd").classList.add("hidden");
-    $("claimBtn").classList.add("hidden");
-    $("timer").textContent="00:15";
-    countdown=setInterval(()=>{
-      seconds--;
-      $("timer").textContent="00:"+String(seconds).padStart(2,"0");
-      if(seconds<=0){
-        clearInterval(countdown); countdown=null;
-        $("timer").textContent="Actividad finalizada";
-        $("claimBtn").classList.remove("hidden");
-      }
-    },1000);
-  });
+ $("startAd").addEventListener("click",()=>{
+ if(countdown) return;
+ seconds=15;
+ $("startAd").classList.add("hidden");
+ $("autoCreditNotice").classList.add("hidden");
+ $("timer").textContent="00:15";
+ countdown=setInterval(()=>{
+ seconds--;
+ $("timer").textContent="00:"+String(seconds).padStart(2,"0");
+ if(seconds<=0){
+ clearInterval(countdown); countdown=null;
+ $("timer").textContent="Actividad finalizada";
+ // Autoacreditación de demostración: 10 gemas al terminar el contador.
+ // En producción, la confirmación debe venir del servidor/proveedor de anuncios.
+ account.gems=(account.gems||0)+10;
+ movements.unshift("+10 gemas de demostración (autoacreditadas)");
+ save(); showBalance();
+ $("autoCreditNotice").style.display="block";
+ $("autoCreditNotice").classList.remove("hidden");
+ $("autoCreditNotice").textContent="✓ 10 gemas de prueba se acreditaron automáticamente.";
+ $("startAd").classList.remove("hidden");
+ }
+ },1000);
+ });
 
-  $("claimBtn").addEventListener("click",()=>{
-    account.gems=(account.gems||0)+10;
-    movements.unshift("+"+"10 gemas de prueba");
-    save(); showBalance();
-    $("claimBtn").classList.add("hidden");
-    $("startAd").classList.remove("hidden");
-    $("timer").textContent="00:15";
-    $("status").style.display="block";
-    $("status").textContent="Se agregaron 10 gemas de prueba. No son canjeables por una recarga.";
-  });
+ $("redeemBtn").addEventListener("click",()=>{
+ const phone=$("telNumber").value.replace(/\D/g,"");
+ if(!/^\d{10}$/.test(phone)){alert("Ingresa un número de 10 dígitos.");return;}
+ if((account.gems||0)<1000){alert("Necesitas al menos 1,000 gemas para solicitar esta recompensa.");return;}
+ if(WHATSAPP_NUMBER.includes("X")){alert("Configura primero el número oficial de WhatsApp en el código HTML.");return;}
+ const msg=`Hola, quiero solicitar una recarga Telcel de $100 MXN. Código: ${account.code}. Número Telcel: ${phone}. Gemas disponibles: ${account.gems}.`;
+ const url=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+ $("status").style.display="block";
+ $("status").textContent="Se abrirá WhatsApp para enviar tu solicitud. Las gemas no se descuentan automáticamente en esta demostración.";
+ window.open(url,"_blank","noopener");
+ });
 
-  $("redeemBtn").addEventListener("click",()=>{
-    const phone=$("telNumber").value.replace(/\D/g,"");
-    if(!/^\d{10}$/.test(phone)){alert("Ingresa un número de 10 dígitos.");return;}
-    if((account.gems||0)<1000){alert("Necesitas al menos 1,000 gemas para solicitar esta recompensa.");return;}
-    if(WHATSAPP_NUMBER.includes("X")){alert("Configura primero el número oficial de WhatsApp en el código HTML.");return;}
-    const msg=`Hola, quiero solicitar una recarga Telcel de $100 MXN. Código: ${account.code}. Número Telcel: ${phone}. Gemas disponibles: ${account.gems}.`;
-    const url=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    $("status").style.display="block";
-    $("status").textContent="Se abrirá WhatsApp para enviar tu solicitud. Las gemas no se descuentan automáticamente en esta demostración.";
-    window.open(url,"_blank","noopener");
-  });
-
-  $("historyBtn").addEventListener("click",()=>{
-    $("history").style.display="block";
-    $("history").textContent=movements.length?movements.join(" · "):"Todavía no hay movimientos.";
-  });
-  $("logoutBtn").addEventListener("click",()=>{
-    localStorage.removeItem(STORAGE_KEY);
-    account=null;
-    $("portal").classList.add("hidden");
-    $("loginCard").classList.remove("hidden");
-  });
+ $("historyBtn").addEventListener("click",()=>{
+ $("history").style.display="block";
+ $("history").textContent=movements.length?movements.join(" · "):"Todavía no hay movimientos.";
+ });
+ $("logoutBtn").addEventListener("click",()=>{
+ localStorage.removeItem(STORAGE_KEY);
+ account=null;
+ $("portal").classList.add("hidden");
+ $("loginCard").classList.remove("hidden");
+ });
 </script>
 </body>
 </html>
+```
