@@ -1,278 +1,781 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8491285101086553"
-     crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1677b8">
-  <title>TELERED INTERNET | Gemas y recompensas</title>
-  <style>
-    :root{--blue:#187db8;--blue2:#11699f;--ink:#263746;--muted:#7b8992;--bg:#eef5fa;--line:#e1e9ef;--white:#fff;--green:#20a765}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(135deg,#edf5fb,#f8fbfd);min-height:100vh}
-    .topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100% - 1050px)/2));}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.4px;color:var(--blue);font-size:18px}
-    .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,#d8bd7a,#9b7838);display:grid;place-items:center;color:#172b3a;font-size:21px;box-shadow:0 4px 12px #9b783833}
-    .tag{font-size:12px;color:var(--muted);font-weight:600}
-    .wrap{width:min(100% - 28px,720px);margin:34px auto 50px}
-    .card{background:rgba(255,255,255,.96);border:1px solid #e8eef3;border-radius:26px;padding:30px;box-shadow:0 16px 45px #294b6410}
-    .hero{text-align:center;margin-bottom:25px}
-    .hero-icon{width:66px;height:66px;margin:0 auto 14px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(145deg,#f8f1df,#e7d5a7);color:#8a6b32;font-size:31px;box-shadow:inset 0 1px 0 #fff,0 7px 18px #9b783822}
-    h1{font-size:clamp(25px,5vw,34px);margin:0 0 9px;color:#263746}
-    .subtitle{color:var(--muted);line-height:1.55;margin:0 auto;max-width:510px}
-    .balance{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(115deg,#167db9,#145f99);color:white;padding:18px 20px;border-radius:18px;margin:24px 0}
-    .balance small{display:block;opacity:.85;margin-bottom:5px}
-    .balance strong{font-size:30px}
-    .gem{font-size:31px;color:#f0d58d;filter:drop-shadow(0 3px 5px #071d2c55)}
-    .section-title{font-size:18px;margin:25px 0 13px}
-    label{display:block;font-size:13px;font-weight:700;color:#6d7d87;margin:0 0 8px;text-transform:uppercase;letter-spacing:.45px}
-    input{width:100%;padding:15px 14px;border:1px solid #dce5eb;border-radius:12px;font-size:16px;background:#fff;color:var(--ink);outline:none}
-    input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #187db81c}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-    .field{margin:15px 0}
-    button,.button{border:0;border-radius:12px;padding:15px 18px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px}
-    .primary{background:var(--blue);color:white;width:100%}
-    .primary:hover{background:var(--blue2)}
-    .secondary{background:#edf5fa;color:var(--blue);width:100%}
-    .whatsapp{background:var(--green);color:white;width:100%}
-    .adbox{border:1px dashed #b8cbd8;background:#f7fafc;border-radius:17px;padding:20px;text-align:center}
-    .ad-icon{font-size:31px;color:#a88748}
-    .adbox h3{margin:8px 0}
-    .adbox p{color:var(--muted);line-height:1.5;margin:7px 0 15px}
-    .timer{font-size:22px;font-weight:800;color:var(--blue);margin:12px 0}
-    .notice{font-size:12px;color:#7e8b93;line-height:1.5;margin-top:13px}
-    .reward{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);gap:12px}
-    .reward:last-child{border-bottom:0}
-    .reward strong{color:#d18b16}
-    .status{padding:12px 14px;border-radius:12px;background:#f0f7fb;color:#416477;font-size:13px;line-height:1.45;margin-top:13px;display:none}
-    .hidden{display:none!important}
-    .footer{text-align:center;color:#87949c;font-size:12px;line-height:1.6;margin:20px 10px}
-    .pill{font-size:11px;font-weight:700;color:#9a6812;background:#fff4d9;border-radius:20px;padding:6px 9px}
-    @media(max-width:520px){.card{padding:22px 18px;border-radius:21px}.grid{grid-template-columns:1fr}.balance{padding:16px}.topbar{padding:0 16px}.tag{display:none}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#211711">
+<meta name="description" content="Galuna Coffee en la plaza de Pajacuarán, Michoacán. Descubre nuestro menú, ubicación y redes sociales.">
+<title>Galuna Coffee | Café y buenos momentos</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --dark: #211711;
+  --cream: #faf5ed;
+  --gold: #c69a61;
+  --text: #30241c;
+  --muted: #76695e;
+  --white: #fffdf9;
+  --line: #e8dccb;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; }
+
+.wrap {
+  width: min(1160px, 91%);
+  margin: auto;
+}
+
+header {
+  background: var(--dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #ffffff18;
+}
+
+nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo svg {
+  width: 48px;
+  height: 48px;
+}
+
+.logo strong {
+  font: 700 23px "Playfair Display", serif;
+  letter-spacing: 2px;
+  display: block;
+}
+
+.logo small {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: 10px;
+  display: block;
+  margin-top: 4px;
+}
+
+.links {
+  display: flex;
+  gap: 23px;
+  align-items: center;
+}
+
+.links a {
+  font-size: 14px;
+  color: #f5e9dc;
+  transition: color .2s;
+}
+
+.links a:hover { color: var(--gold); }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  background: var(--gold);
+  color: #211711;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform .2s, filter .2s;
+  border: 1px solid var(--gold);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, #20140df2 0%, #20140dbd 48%, #20140d25 100%),
+    url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85")
+    center / cover;
+}
+
+.hero-content {
+  max-width: 720px;
+  padding: 90px 0;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  font-size: clamp(46px, 7vw, 82px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 20px 0;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: 560px;
+  color: #f1e5d8;
+  margin-bottom: 30px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+section { padding: 86px 0; }
+
+.heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 42px;
+}
+
+.heading h2 {
+  font-size: clamp(35px, 5vw, 51px);
+  margin: 12px 0;
+  letter-spacing: -1px;
+}
+
+.heading p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+/* GALERÍA */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  grid-template-rows: 230px 230px;
+  gap: 16px;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #d8b995, #67462f);
+  min-width: 0;
+}
+
+.photo:first-child {
+  grid-row: span 2;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+
+.photo:hover img { transform: scale(1.05); }
+
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, #160e0be8);
+  pointer-events: none;
+}
+
+.photo h3 {
+  position: absolute;
+  z-index: 1;
+  bottom: 14px;
+  left: 18px;
+  right: 12px;
+  margin: 0;
+  font-size: clamp(16px, 1.8vw, 21px);
+  line-height: 1.3;
+  color: white;
+}
+
+.note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 22px;
+}
+
+/* MENÚ PDF */
+
+.soft { background: #f0e5d7; }
+
+.menu-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 20px 60px #3828190b;
+}
+
+.pdf {
+  width: 100%;
+  height: 760px;
+  border: 1px solid #e7dac9;
+  border-radius: 12px;
+  background: #eee5d9;
+}
+
+.pdf-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.pdf-note a {
+  color: #805b34;
+  text-decoration: underline;
+}
+
+/* UBICACIÓN Y CONTACTO */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px #3828190c;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1e4d2;
+  color: #805b34;
+  font-size: 23px;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin: 19px 0 8px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.link {
+  font-weight: 700;
+  color: #805b34;
+  font-size: 14px;
+}
+
+.link:hover { text-decoration: underline; }
+
+/* RESEÑAS */
+
+.review {
+  max-width: 790px;
+  margin: auto;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 48px 25px;
+  box-shadow: 0 18px 50px #3828190b;
+}
+
+.stars {
+  color: #bc862d;
+  letter-spacing: 5px;
+  font-size: 25px;
+}
+
+.review h2 {
+  font-size: clamp(34px, 5vw, 44px);
+  margin: 15px 0;
+}
+
+.review p {
+  max-width: 570px;
+  margin: 0 auto 25px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* REDES SOCIALES */
+
+.socials {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.socials a {
+  border: 1px solid #dfcfba;
+  background: var(--white);
+  padding: 13px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.socials a:hover {
+  border-color: var(--gold);
+  background: #f5eadb;
+}
+
+/* CIERRE Y PIE */
+
+.cta {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 66px 0;
+}
+
+.cta h2 {
+  font-size: clamp(34px, 5vw, 49px);
+  margin: 0 0 14px;
+}
+
+.cta p {
+  color: #d9c9b9;
+  margin: 0 auto 25px;
+  line-height: 1.8;
+}
+
+footer {
+  background: #170f0b;
+  color: #c8b8a7;
+  padding: 25px 0;
+  font-size: 12px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+footer a { color: var(--gold); }
+
+@media (max-width: 760px) {
+  nav {
+    padding: 14px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .links {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .links a { font-size: 12px; }
+
+  .hero {
+    min-height: 550px;
+    background-position: 60% center;
+  }
+
+  .hero-content { padding: 70px 0; }
+
+  section { padding: 62px 0; }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 210px 175px 175px;
+    gap: 12px;
+  }
+
+  .photo:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .pdf {
+    height: 65vh;
+    min-height: 400px;
+  }
+
+  .menu-box { padding: 12px; }
+}
+
+@media (max-width: 400px) {
+  .logo strong { font-size: 20px; }
+  .links { gap: 11px; }
+  .btn { padding: 12px 15px; }
+  .gallery {
+    grid-template-rows: 190px 155px 155px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="brand-mark">◆</span><span>TELERED INTERNET</span></div>
-    <span class="tag">TECNOLOGÍA QUE IMPULSA TU ECONOMÍA</span>
-  </header>
 
-  <main class="wrap">
-    <section class="card" id="loginCard">
-      <div class="hero">
-        <div class="hero-icon">⌘</div>
-        <h1>Bienvenido a TELERED</h1>
-        <p class="subtitle">Participa, acumula gemas virtuales y solicita recompensas. Tu tiempo en línea puede convertirse en beneficios.</p>
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#inicio" aria-label="Galuna Coffee, inicio">
+      <svg viewBox="0 0 64 64" role="img" aria-label="Logotipo de Galuna Coffee">
+        <circle cx="32" cy="32" r="29" fill="none" stroke="#c69a61" stroke-width="2"/>
+        <path d="M15 27h30v12a9 9 0 0 1-9 9H24a9 9 0 0 1-9-9z" fill="#c69a61"/>
+        <path d="M45 30h3a6 6 0 0 1 0 12h-5" fill="none" stroke="#e9c895" stroke-width="3"/>
+        <path d="M23 21c-4-4 3-5 0-10M32 21c-4-4 3-5 0-10M41 21c-4-4 3-5 0-10" fill="none" stroke="#e9c895" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>
+        <strong>GALUNA</strong>
+        <small>COFFEE</small>
+      </span>
+    </a>
+
+    <div class="links">
+      <a href="#menu">Menú</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PORTADA -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-content">
+      <div class="kicker">Café · Sabor · Momentos</div>
+      <h1>Tu pausa favorita.<br><em>Tu momento Galuna.</em></h1>
+      <p>
+        Un espacio para disfrutar tus bebidas favoritas,
+        compartir una buena charla y convertir cualquier día
+        en un momento especial.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#menu">☕ Consultar menú</a>
+        <a class="btn btn-outline"
+           href="https://wa.me/523531848178"
+           target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
-      <div class="field">
-        <label for="userCode">Código de usuario</label>
-        <input id="userCode" placeholder="Ej. TEL-1025" autocomplete="username">
+    </div>
+  </section>
+
+  <!-- GALERÍA CON CINCO FOTOS Y FRASES DIFERENTES -->
+  <section id="galeria">
+    <div class="wrap">
+      <div class="heading">
+        <div class="kicker">Nuestra esencia</div>
+        <h2>Momentos Galuna</h2>
+        <p>
+          Descubre el encanto del café, los pequeños detalles
+          y esos momentos que vale la pena disfrutar.
+        </p>
       </div>
-      <div class="field">
-        <label for="day">Fecha de nacimiento (día, mes y año)</label>
-        <div class="grid">
-          <input id="day" type="number" min="1" max="31" placeholder="Día">
-          <input id="month" type="number" min="1" max="12" placeholder="Mes">
-          <input id="year" type="number" min="1900" max="2100" placeholder="Año">
+
+      <div class="gallery">
+
+        <div class="photo">
+          <img
+            src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1000&q=85"
+            alt="Granos de café tostados"
+            loading="lazy">
+          <h3>El aroma que enamora</h3>
+        </div>
+
+        <div class="photo">
+          <img
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=85"
+            alt="Preparación artesanal de café"
+            loading="lazy">
+          <h3>Un ritual lleno de sabor</h3>
+        </div>
+
+        <div class="photo">
+          <img
+            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=85"
+            alt="Ambiente acogedor de cafetería"
+            loading="lazy">
+          <h3>Tu rincón favorito</h3>
+        </div>
+
+        <div class="photo">
+          <img
+            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=85"
+            alt="Bebida de café servida"
+            loading="lazy">
+          <h3>Pequeños gustos, grandes momentos</h3>
+        </div>
+
+        <div class="photo">
+          <img
+            src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=85"
+            alt="Interior de una cafetería"
+            loading="lazy">
+          <h3>Siempre hay tiempo para un café</h3>
+        </div>
+
+      </div>
+
+      <p class="note">
+        Fotografías ilustrativas de café y cafeterías.
+        No representan necesariamente el establecimiento real.
+      </p>
+    </div>
+  </section>
+
+  <!-- MENÚ PDF -->
+  <section id="menu" class="soft">
+    <div class="wrap">
+      <div class="heading">
+        <div class="kicker">Algo delicioso te espera</div>
+        <h2>Nuestro menú</h2>
+        <p>
+          Explora nuestro menú desde la página.
+          Consulta las opciones disponibles en el documento PDF.
+        </p>
+      </div>
+
+      <div class="menu-box">
+        <iframe
+          class="pdf"
+          src="menu-galuna.pdf#view=FitH"
+          title="Menú PDF de Galuna Coffee">
+        </iframe>
+
+        <p class="pdf-note">
+          Guarda el menú oficial con el nombre
+          <strong>menu-galuna.pdf</strong> en la misma carpeta
+          que este archivo HTML.<br>
+          Si no se muestra,
+          <a href="menu-galuna.pdf" target="_blank" rel="noopener">
+            abre el menú en otra pestaña
+          </a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion">
+    <div class="wrap">
+      <div class="heading">
+        <div class="kicker">Ven a visitarnos</div>
+        <h2>Encuentra tu lugar</h2>
+        <p>Te esperamos en la plaza de Pajacuarán, Michoacán.</p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="icon">⌖</div>
+          <h3>Ubicación</h3>
+          <p>
+            Plaza de Pajacuarán, Michoacán, México.
+            Consulta la ubicación exacta y cómo llegar.
+          </p>
+          <a class="link"
+             href="https://maps.app.goo.gl/Zy5QwYhT2dhSwtwr7"
+             target="_blank" rel="noopener noreferrer">
+            Cómo llegar ↗
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="icon">✆</div>
+          <h3>WhatsApp</h3>
+          <p>
+            Comunícate con nosotros al
+            +52 353 184 8178.
+          </p>
+          <a class="link"
+             href="https://wa.me/523531848178"
+             target="_blank" rel="noopener noreferrer">
+            Enviar mensaje ↗
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="icon">♡</div>
+          <h3>Una experiencia Galuna</h3>
+          <p>
+            Ven con amigos, familia o regálate
+            un momento especial para ti.
+          </p>
+          <a class="link" href="#galeria">Ver galería ↓</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS DE GOOGLE -->
+  <section id="resenas" class="soft">
+    <div class="wrap">
+      <div class="review">
+        <div class="stars" aria-label="Estrellas decorativas">★★★★★</div>
+        <div class="kicker">Tu opinión cuenta</div>
+        <h2>¿Cómo fue tu visita?</h2>
+        <p>
+          Tu opinión ayuda a otras personas a descubrir Galuna Coffee.
+          Comparte tu experiencia en nuestra ficha de Google Maps.
+        </p>
+        <a class="btn"
+           href="https://maps.app.goo.gl/Zy5QwYhT2dhSwtwr7"
+           target="_blank" rel="noopener noreferrer">
+          Ver o escribir una reseña ↗
+        </a>
+        <p style="font-size:12px;margin-top:20px;margin-bottom:0">
+          Las reseñas se consultan en Google Maps y no aparecen
+          automáticamente dentro de esta página.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDES SOCIALES -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="heading">
+        <div class="kicker">Sigamos conectados</div>
+        <h2>Conecta con Galuna</h2>
+        <p>
+          Síguenos en nuestras redes sociales y mantente
+          al tanto de nuestras novedades.
+        </p>
+
+        <div class="socials">
+          <a href="https://www.facebook.com/share/1ExGeMDrae/"
+             target="_blank" rel="noopener noreferrer">
+            Facebook ↗
+          </a>
+
+          <a href="https://www.instagram.com/coffeegaluna2023?obrf=MTZ2c3o2ZTMxdmRtbQ=="
+             target="_blank" rel="noopener noreferrer">
+            Instagram ↗
+          </a>
+
+          <a href="https://wa.me/523531848178"
+             target="_blank" rel="noopener noreferrer">
+            WhatsApp ↗
+          </a>
         </div>
       </div>
-      <button class="primary" id="loginBtn">◆ Acceder al portal</button>
-      <p class="notice">Versión de prueba: la cuenta y las gemas se guardan solo en este navegador. No uses datos reales; para operar públicamente necesitas autenticación y una base de datos segura.</p>
-    </section>
+    </div>
+  </section>
 
-    <section class="card hidden" id="portal">
-      <div class="hero">
-        <div class="hero-icon">◇</div>
-        <h1>Tu portal de recompensas</h1>
-        <p class="subtitle">Mira las actividades disponibles, acumula gemas y consulta tus opciones de canje.</p>
-      </div>
-      <div class="balance">
-        <div><small>MI SALDO VIRTUAL</small><strong id="gemBalance">0</strong><div>gemas acumuladas</div></div>
-        <div class="gem">◆</div>
-      </div>
+  <!-- LLAMADA FINAL -->
+  <section class="cta">
+    <div class="wrap">
+      <h2>Nos vemos en Galuna Coffee</h2>
+      <p>Tu café, tu espacio, tu momento.</p>
+      <a class="btn"
+         href="https://wa.me/523531848178"
+         target="_blank" rel="noopener noreferrer">
+        Contáctanos por WhatsApp
+      </a>
+    </div>
+  </section>
 
+</main>
 
-      <h2 class="section-title">◈ Publicidad</h2>
-      <div class="adbox">
-        <div class="ad-icon">▶</div>
-        <h3>Anuncio disponible</h3>
-        <p>Pulsa el botón para mostrar el espacio publicitario. La publicidad no otorga gemas ni requiere hacer clic en el anuncio.</p>
-        <button class="primary" id="startAd" type="button">Iniciar anuncio</button>
-        <div id="adArea" class="hidden" style="margin-top:16px">
-          <ins class="adsbygoogle"
-               style="display:block; min-height:100px"
-               data-ad-client="ca-pub-8491285101086553"
-               data-ad-slot="REEMPLAZA_CON_ID_DEL_BLOQUE"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <p class="notice" id="adHelp">Si no aparece un anuncio, comprueba que el dominio esté aprobado y que el ID del bloque sea correcto.</p>
-        </div>
-      </div>
-
-<h2 class="section-title">◇ Canje de recompensas</h2>
-      <div class="reward"><span>▣ Recarga Telcel de $100 MXN</span><strong>1,000 gemas</strong></div>
-      <div class="field">
-        <label for="telNumber">Número Telcel de 10 dígitos</label>
-        <input id="telNumber" inputmode="numeric" maxlength="10" placeholder="Ej. 3511234567">
-      </div>
-      <button class="whatsapp" id="redeemBtn"><span>◉</span> Solicitar recarga por WhatsApp</button>
-      <div class="status" id="status"></div>
-      <p class="notice">La solicitud se enviará por WhatsApp para revisión. El canje real requiere verificar el saldo, confirmar la disponibilidad y realizar la recarga manualmente o mediante un proveedor.</p>
-
-      <h2 class="section-title">▤ Mi cuenta</h2>
-      <div class="reward"><span>Código de usuario</span><strong id="profileCode">—</strong></div>
-      <div class="reward"><span>Historial</span><button class="secondary" id="historyBtn" style="width:auto;padding:9px 12px;font-size:13px">Ver movimientos</button></div>
-      <div id="history" class="status"></div>
-      <button class="secondary" id="logoutBtn" style="margin-top:17px">Cerrar sesión</button>
-    </section>
-    <p class="footer">TELERED INTERNET · Más conexión, más oportunidades, más beneficios.
-    Las cuentas y gemas de esta versión se guardan en este navegador.<br>Las gemas son unidades virtuales; consulta las reglas y condiciones antes de solicitar un canje.</p>
-  </main>
+<footer>
+  <div class="wrap footer">
+    <span>© <span id="year">2026</span> Galuna Coffee</span>
+    <span>
+      Pajacuarán, Michoacán ·
+      <a href="#inicio">Volver arriba ↑</a>
+    </span>
+  </div>
+</footer>
 
 <script>
-  // Versión local: las cuentas y los saldos se guardan en este navegador.
-  // Sustituye el marcador por tu WhatsApp oficial: código de país + número, sin + ni espacios.
-  const WHATSAPP_NUMBER = "52XXXXXXXXXX";
-  const STORAGE_KEY = "telered_account_v3";
-  const $ = id => document.getElementById(id);
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-  let account = null;
-function showBalance() {
-    $("gemBalance").textContent = Number(account?.gems || 0).toLocaleString("es-MX");
-  }
-
-  function save() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(account));
-      return true;
-    } catch (error) {
-      alert("No se pudo guardar la cuenta en este navegador.");
-      return false;
-    }
-  }
-
-  function showPortal() {
-    $("loginCard").classList.add("hidden");
-    $("portal").classList.remove("hidden");
-    $("profileCode").textContent = account.code;
-    showBalance();
-  }
-
-  function validDate(day, month, year) {
-    const date = new Date(year, month - 1, day);
-    return date.getFullYear() === year &&
-      date.getMonth() === month - 1 &&
-      date.getDate() === day && date <= new Date();
-  }
-
-  function renderHistory() {
-    const history = $("history");
-    history.style.display = "block";
-    const entries = Array.isArray(account.movements) ? account.movements : [];
-    history.textContent = entries.length ? entries.join(" · ") : "Todavía no hay movimientos.";
-  }
-
-  // Recupera la cuenta guardada en este navegador.
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    if (saved && typeof saved.code === "string" &&
-        Number.isFinite(saved.gems) && saved.gems >= 0) {
-      account = {
-        code: saved.code,
-        birthDate: saved.birthDate || "",
-        gems: saved.gems,
-        movements: Array.isArray(saved.movements) ? saved.movements : []
-      };
-      showPortal();
-    }
-  } catch (error) {
-    try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
-  }
-
-  $("loginBtn").addEventListener("click", () => {
-    const code = $("userCode").value.trim().toUpperCase();
-    const day = Number($("day").value);
-    const month = Number($("month").value);
-    const year = Number($("year").value);
-
-    if (!/^[A-Z0-9-]{4,24}$/.test(code) || !day || !month || !year ||
-        !validDate(day, month, year)) {
-      alert("Escribe un código válido y una fecha de nacimiento real.");
-      return;
-    }
-
-    const birthDate = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-
-    if (account) {
-      if (account.code !== code || account.birthDate !== birthDate) {
-        alert("Los datos no coinciden con la cuenta guardada en este navegador.");
-        return;
-      }
-    } else {
-      account = { code, birthDate, gems: 0, movements: [] };
-      if (!save()) { account = null; return; }
-    }
-    showPortal();
+// Si una fotografía falla, se oculta para evitar
+// mostrar el icono de imagen rota.
+document.querySelectorAll(".photo img").forEach(function(img) {
+  img.addEventListener("error", function() {
+    img.style.display = "none";
   });
-
-  // Al pulsar el botón se revela y solicita el bloque publicitario.
-  let adRequested = false;
-  $("startAd").addEventListener("click", () => {
-    const area = $("adArea");
-    area.classList.remove("hidden");
-    const slot = area.querySelector(".adsbygoogle");
-
-    if (!slot || slot.dataset.adSlot === "REEMPLAZA_CON_ID_DEL_BLOQUE") {
-      $("adHelp").textContent = "Falta el ID del bloque. En AdSense entra en Anuncios > Por bloque de anuncios > Anuncios display > Obtener código y sustituye REEMPLAZA_CON_ID_DEL_BLOQUE.";
-      return;
-    }
-
-    if (!adRequested) {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        adRequested = true;
-      } catch (error) {
-        $("adHelp").textContent = "AdSense no pudo cargar el anuncio. Comprueba la aprobación del sitio, el ID del bloque y que no haya un bloqueador de anuncios.";
-      }
-    }
-  });
-
-  $("redeemBtn").addEventListener("click", () => {
-    if (!account) { alert("Primero accede a tu cuenta."); return; }
-    const phone = $("telNumber").value.replace(/\D/g, "");
-    if (!/^\d{10}$/.test(phone)) {
-      alert("Ingresa un número de 10 dígitos.");
-      return;
-    }
-    if (account.gems < 1000) {
-      alert("Necesitas al menos 1,000 gemas para solicitar esta recompensa.");
-      return;
-    }
-    if (!/^\d{12}$/.test(WHATSAPP_NUMBER)) {
-      alert("Configura el WhatsApp oficial en el código HTML (52 + 10 dígitos).");
-      return;
-    }
-
-    const message = `Hola, quiero solicitar una recarga Telcel de $100 MXN. Código: ${account.code}. Número Telcel: ${phone}. Gemas disponibles: ${account.gems}.`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    $("status").style.display = "block";
-    $("status").textContent = "Se abrirá WhatsApp. La solicitud debe revisarse y la recarga confirmarse por separado.";
-    window.open(url, "_blank", "noopener,noreferrer");
-  });
-
-  $("historyBtn").addEventListener("click", renderHistory);
-
-  $("logoutBtn").addEventListener("click", () => {
-    try { localStorage.removeItem(STORAGE_KEY); } catch (error) {}
-    account = null;
-    $("portal").classList.add("hidden");
-    $("loginCard").classList.remove("hidden");
-    $("userCode").value = "";
-    $("day").value = "";
-    $("month").value = "";
-    $("year").value = "";
-  });
+});
 </script>
+
 </body>
 </html>
