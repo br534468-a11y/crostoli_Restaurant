@@ -2,780 +2,1445 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#211711">
-<meta name="description" content="Galuna Coffee en la plaza de Pajacuarán, Michoacán. Descubre nuestro menú, ubicación y redes sociales.">
-<title>Galuna Coffee | Café y buenos momentos</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --dark: #211711;
-  --cream: #faf5ed;
-  --gold: #c69a61;
-  --text: #30241c;
-  --muted: #76695e;
-  --white: #fffdf9;
-  --line: #e8dccb;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--text);
-  font-family: "DM Sans", sans-serif;
-}
-
-a { color: inherit; text-decoration: none; }
-
-img { max-width: 100%; }
-
-.wrap {
-  width: min(1160px, 91%);
-  margin: auto;
-}
-
-header {
-  background: var(--dark);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  border-bottom: 1px solid #ffffff18;
-}
-
-nav {
-  min-height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.logo svg {
-  width: 48px;
-  height: 48px;
-}
-
-.logo strong {
-  font: 700 23px "Playfair Display", serif;
-  letter-spacing: 2px;
-  display: block;
-}
-
-.logo small {
-  color: var(--gold);
-  letter-spacing: 5px;
-  font-size: 10px;
-  display: block;
-  margin-top: 4px;
-}
-
-.links {
-  display: flex;
-  gap: 23px;
-  align-items: center;
-}
-
-.links a {
-  font-size: 14px;
-  color: #f5e9dc;
-  transition: color .2s;
-}
-
-.links a:hover { color: var(--gold); }
-
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 22px;
-  border-radius: 50px;
-  background: var(--gold);
-  color: #211711;
-  font-weight: 700;
-  font-size: 14px;
-  transition: transform .2s, filter .2s;
-  border: 1px solid var(--gold);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.06);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--gold);
-}
-
-.hero {
-  min-height: 620px;
-  display: flex;
-  align-items: center;
-  color: white;
-  background:
-    linear-gradient(90deg, #20140df2 0%, #20140dbd 48%, #20140d25 100%),
-    url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85")
-    center / cover;
-}
-
-.hero-content {
-  max-width: 720px;
-  padding: 90px 0;
-}
-
-.kicker {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--gold);
-}
-
-h1, h2, h3 {
-  font-family: "Playfair Display", serif;
-}
-
-h1 {
-  font-size: clamp(46px, 7vw, 82px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-  margin: 20px 0;
-}
-
-h1 em {
-  font-style: normal;
-  color: var(--gold);
-}
-
-.hero p {
-  font-size: 17px;
-  line-height: 1.85;
-  max-width: 560px;
-  color: #f1e5d8;
-  margin-bottom: 30px;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-section { padding: 86px 0; }
-
-.heading {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 42px;
-}
-
-.heading h2 {
-  font-size: clamp(35px, 5vw, 51px);
-  margin: 12px 0;
-  letter-spacing: -1px;
-}
-
-.heading p {
-  color: var(--muted);
-  line-height: 1.85;
-}
-
-/* GALERÍA */
-
-.gallery {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr;
-  grid-template-rows: 230px 230px;
-  gap: 16px;
-}
-
-.photo {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  border-radius: 17px;
-  background: linear-gradient(145deg, #d8b995, #67462f);
-  min-width: 0;
-}
-
-.photo:first-child {
-  grid-row: span 2;
-}
-
-.photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .5s;
-}
-
-.photo:hover img { transform: scale(1.05); }
-
-.photo::after {
-  content: "";
-  position: absolute;
-  inset: 35% 0 0;
-  background: linear-gradient(transparent, #160e0be8);
-  pointer-events: none;
-}
-
-.photo h3 {
-  position: absolute;
-  z-index: 1;
-  bottom: 14px;
-  left: 18px;
-  right: 12px;
-  margin: 0;
-  font-size: clamp(16px, 1.8vw, 21px);
-  line-height: 1.3;
-  color: white;
-}
-
-.note {
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.8;
-  margin-top: 22px;
-}
-
-/* MENÚ PDF */
-
-.soft { background: #f0e5d7; }
-
-.menu-box {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 22px;
-  box-shadow: 0 20px 60px #3828190b;
-}
-
-.pdf {
-  width: 100%;
-  height: 760px;
-  border: 1px solid #e7dac9;
-  border-radius: 12px;
-  background: #eee5d9;
-}
-
-.pdf-note {
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.pdf-note a {
-  color: #805b34;
-  text-decoration: underline;
-}
-
-/* UBICACIÓN Y CONTACTO */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.card {
-  padding: 30px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 17px;
-  transition: transform .2s, box-shadow .2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 35px #3828190c;
-}
-
-.icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #f1e4d2;
-  color: #805b34;
-  font-size: 23px;
-}
-
-.card h3 {
-  font-size: 24px;
-  margin: 19px 0 8px;
-}
-
-.card p {
-  color: var(--muted);
-  line-height: 1.8;
-  font-size: 14px;
-}
-
-.link {
-  font-weight: 700;
-  color: #805b34;
-  font-size: 14px;
-}
-
-.link:hover { text-decoration: underline; }
-
-/* RESEÑAS */
-
-.review {
-  max-width: 790px;
-  margin: auto;
-  text-align: center;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 48px 25px;
-  box-shadow: 0 18px 50px #3828190b;
-}
-
-.stars {
-  color: #bc862d;
-  letter-spacing: 5px;
-  font-size: 25px;
-}
-
-.review h2 {
-  font-size: clamp(34px, 5vw, 44px);
-  margin: 15px 0;
-}
-
-.review p {
-  max-width: 570px;
-  margin: 0 auto 25px;
-  line-height: 1.8;
-  color: var(--muted);
-}
-
-/* REDES SOCIALES */
-
-.socials {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 28px;
-}
-
-.socials a {
-  border: 1px solid #dfcfba;
-  background: var(--white);
-  padding: 13px 20px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 700;
-  transition: .2s;
-}
-
-.socials a:hover {
-  border-color: var(--gold);
-  background: #f5eadb;
-}
-
-/* CIERRE Y PIE */
-
-.cta {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 66px 0;
-}
-
-.cta h2 {
-  font-size: clamp(34px, 5vw, 49px);
-  margin: 0 0 14px;
-}
-
-.cta p {
-  color: #d9c9b9;
-  margin: 0 auto 25px;
-  line-height: 1.8;
-}
-
-footer {
-  background: #170f0b;
-  color: #c8b8a7;
-  padding: 25px 0;
-  font-size: 12px;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-footer a { color: var(--gold); }
-
-@media (max-width: 760px) {
-  nav {
-    padding: 14px 0;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .links {
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  .links a { font-size: 12px; }
-
-  .hero {
-    min-height: 550px;
-    background-position: 60% center;
-  }
-
-  .hero-content { padding: 70px 0; }
-
-  section { padding: 62px 0; }
-
-  .gallery {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 210px 175px 175px;
-    gap: 12px;
-  }
-
-  .photo:first-child {
-    grid-column: span 2;
-    grid-row: auto;
-  }
-
-  .cards { grid-template-columns: 1fr; }
-
-  .pdf {
-    height: 65vh;
-    min-height: 400px;
-  }
-
-  .menu-box { padding: 12px; }
-}
-
-@media (max-width: 400px) {
-  .logo strong { font-size: 20px; }
-  .links { gap: 11px; }
-  .btn { padding: 12px 15px; }
-  .gallery {
-    grid-template-rows: 190px 155px 155px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241811">
+
+  <title>Galuna Coffee | Café y buenos momentos</title>
+
+  <meta name="description"
+    content="Bienvenidos a Galuna Coffee. Disfruta de café, bebidas y momentos especiales en Pajacuarán, Michoacán.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #241811;
+      --dark-light: #38271e;
+      --cream: #f8f3eb;
+      --white: #fffdf9;
+      --gold: #c49a62;
+      --text: #40352d;
+      --muted: #88796c;
+      --border: #e8ded1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      color: var(--dark);
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 15px auto 0;
+      font-size: 15px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 23px;
+      border-radius: 3px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #21170f;
+    }
+
+    .btn-gold:hover {
+      background: #d8b27f;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: white;
+      border-color: rgba(255,255,255,.5);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* Navegación */
+
+    .topbar {
+      background: var(--dark);
+      color: #eee0ce;
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,253,249,.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      background: var(--dark);
+    }
+
+    .brand-mark svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .brand-name {
+      color: var(--dark);
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: .4px;
+    }
+
+    .brand-caption {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 9px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: #a67840;
+    }
+
+    .nav-contact {
+      background: var(--dark);
+      color: white;
+      padding: 11px 16px;
+      border-radius: 3px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--dark);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Portada */
+
+    .hero {
+      min-height: 610px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(26,17,12,.91) 0%,
+        rgba(26,17,12,.70) 48%,
+        rgba(26,17,12,.16) 100%),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85")
+        center 52% / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 690px;
+      padding: 90px 0 105px;
+    }
+
+    .hero .eyebrow {
+      color: #e2bd88;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 77px);
+      letter-spacing: -1.8px;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 em {
+      color: #e0b77f;
+      font-weight: 400;
+    }
+
+    .hero-description {
+      color: #eee3d7;
+      font-size: 15px;
+      max-width: 470px;
+      margin-bottom: 31px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-note {
+      margin-top: 43px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e9d7c2;
+      font-size: 12px;
+    }
+
+    .hero-note span {
+      color: var(--gold);
+      font-size: 19px;
+    }
+
+    /* Presentación */
+
+    .welcome {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .welcome-photo {
+      position: relative;
+      padding: 0 20px 20px 0;
+    }
+
+    .welcome-photo img {
+      height: 440px;
+      border-radius: 3px;
+    }
+
+    .welcome-photo::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 75%;
+      height: 75%;
+      border: 1px solid var(--gold);
+      z-index: 0;
+    }
+
+    .welcome-photo img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .welcome-text h2 {
+      margin-bottom: 23px;
+    }
+
+    .welcome-text p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .welcome-signature {
+      color: var(--dark);
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 24px;
+      margin-top: 22px;
+    }
+
+    /* Experiencia */
+
+    .experience {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .experience-card {
+      border: 1px solid var(--border);
+      padding: 35px 28px;
+      background: white;
+      transition: .25s;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .experience-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #dfc8a9;
+      color: #a77a45;
+      border-radius: 50%;
+      font-size: 24px;
+      margin-bottom: 22px;
+    }
+
+    .experience-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .experience-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Galería */
+
+    .gallery {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 245px 245px;
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: #e7dbcc;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: transform .6s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 35px 18px 18px;
+      color: white;
+      background: linear-gradient(transparent, rgba(20,13,8,.8));
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+    }
+
+    /* Menú PDF */
+
+    .menu-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .menu-card {
+      background: var(--dark);
+      color: white;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 40px;
+      padding: 48px;
+    }
+
+    .menu-card h2 {
+      color: white;
+      margin-bottom: 18px;
+    }
+
+    .menu-card p {
+      color: #d4c5b5;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .menu-preview {
+      min-height: 350px;
+      background: white;
+      color: var(--dark);
+      overflow: hidden;
+    }
+
+    .menu-preview iframe {
+      display: block;
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
+
+    .menu-placeholder {
+      min-height: 350px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #f5ede2;
+    }
+
+    .menu-placeholder .cup {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .menu-placeholder p {
+      color: var(--muted);
+      margin: 10px 0 20px;
+    }
+
+    /* Ubicación y horarios */
+
+    .location {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: stretch;
+    }
+
+    .location-details {
+      display: grid;
+      gap: 14px;
+    }
+
+    .detail-card {
+      display: flex;
+      gap: 17px;
+      align-items: flex-start;
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .detail-icon {
+      font-size: 23px;
+      color: #a77a45;
+    }
+
+    .detail-card h3 {
+      color: var(--dark);
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .detail-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .map-panel {
+      min-height: 410px;
+      background:
+        linear-gradient(rgba(36,24,17,.12), rgba(36,24,17,.30)),
+        url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=85")
+        center / cover;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    .map-panel-content {
+      background: rgba(255,253,249,.96);
+      padding: 25px;
+      width: 100%;
+    }
+
+    .map-panel-content h3 {
+      color: var(--dark);
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .map-panel-content p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 17px;
+    }
+
+    /* Reseñas */
+
+    .reviews {
+      padding: 90px 0;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .stars {
+      color: #c79543;
+      letter-spacing: 5px;
+      font-size: 30px;
+      margin: 18px 0;
+    }
+
+    .reviews-text {
+      max-width: 550px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Redes */
+
+    .social {
+      padding: 72px 0;
+      background: #eee4d7;
+      text-align: center;
+    }
+
+    .social h2 {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .social p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 27px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      border: 1px solid #cdbba6;
+      padding: 12px 21px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .social-link:hover {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
+
+    /* Pie de página */
+
+    footer {
+      background: var(--dark);
+      color: #d5c5b4;
+      padding: 50px 0 20px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand .brand-name {
+      color: white;
+    }
+
+    .footer-brand .brand-caption {
+      color: #c9b39a;
+    }
+
+    .footer-text {
+      max-width: 310px;
+      font-size: 12px;
+      margin-top: 18px;
+      color: #c6b6a6;
+    }
+
+    .footer-links h3 {
+      color: white;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      margin-bottom: 13px;
+    }
+
+    .footer-links a {
+      display: block;
+      font-size: 12px;
+      margin: 8px 0;
+      color: #c6b6a6;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      border-top: 1px solid #4a382c;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 11px;
+      color: #b5a393;
+    }
+
+    /* WhatsApp flotante */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 99;
+      width: 57px;
+      height: 57px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 27px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+      transition: transform .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    /* Adaptación móvil */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .nav-contact {
+        display: none;
+      }
+
+      .welcome-grid {
+        gap: 40px;
+      }
+
+      .menu-card {
+        grid-template-columns: 1fr;
+        padding: 35px;
+      }
+
+      .gallery-grid {
+        grid-template-rows: 220px 220px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        min-height: 72px;
+      }
+
+      .brand-name {
+        font-size: 22px;
+      }
+
+      .brand-mark {
+        width: 44px;
+        height: 44px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 12px 0;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 560px;
+        background-position: 58% center;
+      }
+
+      .hero-content {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(43px, 12vw, 61px);
+      }
+
+      .welcome,
+      .experience,
+      .gallery,
+      .menu-section,
+      .location {
+        padding: 70px 0;
+      }
+
+      .welcome-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .welcome-photo img {
+        height: 330px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        padding: 28px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 280px 190px 190px;
+        gap: 10px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .gallery-label {
+        font-size: 17px;
+      }
+
+      .menu-card {
+        padding: 25px 18px;
+        gap: 25px;
+      }
+
+      .menu-preview,
+      .menu-preview iframe,
+      .menu-placeholder {
+        min-height: 300px;
+        height: 300px;
+      }
+
+      .map-panel {
+        min-height: 340px;
+        padding: 15px;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+      }
+
+      .social h2 {
+        font-size: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <nav class="wrap">
-    <a class="logo" href="#inicio" aria-label="Galuna Coffee, inicio">
-      <svg viewBox="0 0 64 64" role="img" aria-label="Logotipo de Galuna Coffee">
-        <circle cx="32" cy="32" r="29" fill="none" stroke="#c69a61" stroke-width="2"/>
-        <path d="M15 27h30v12a9 9 0 0 1-9 9H24a9 9 0 0 1-9-9z" fill="#c69a61"/>
-        <path d="M45 30h3a6 6 0 0 1 0 12h-5" fill="none" stroke="#e9c895" stroke-width="3"/>
-        <path d="M23 21c-4-4 3-5 0-10M32 21c-4-4 3-5 0-10M41 21c-4-4 3-5 0-10" fill="none" stroke="#e9c895" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <span>
-        <strong>GALUNA</strong>
-        <small>COFFEE</small>
-      </span>
-    </a>
+  <div class="topbar">
+    CAFÉ · BUENOS MOMENTOS · PAJACUARÁN, MICHOACÁN
+  </div>
 
-    <div class="links">
-      <a href="#menu">Menú</a>
-      <a href="#galeria">Galería</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#resenas">Reseñas</a>
-      <a href="#contacto">Contacto</a>
+  <header>
+    <div class="container navbar">
+
+      <a class="brand" href="#inicio" aria-label="Galuna Coffee, inicio">
+        <div class="brand-mark">
+          <svg viewBox="0 0 48 48" fill="none"
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M11 20H32V31C32 37 28 40 22 40H21C15 40 11 36 11 30V20Z"
+              stroke="currentColor" stroke-width="1.8"/>
+            <path d="M32 23H36C41 23 40 31 32 31"
+              stroke="currentColor" stroke-width="1.8"/>
+            <path d="M16 14C13 11 18 9 16 6M23 14C20 11 25 9 23 6M30 14C27 11 32 9 30 6"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8 43H38" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div>
+          <div class="brand-name">Galuna Coffee</div>
+          <div class="brand-caption">Café · Momentos · Experiencias</div>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="navLinks">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
+
+      <a class="nav-contact"
+        href="https://wa.me/523531848178"
+        target="_blank" rel="noopener noreferrer">
+        Contáctanos ↗
+      </a>
+
     </div>
-  </nav>
-</header>
+  </header>
 
-<main>
+  <main>
 
-  <!-- PORTADA -->
-  <section class="hero" id="inicio">
-    <div class="wrap hero-content">
-      <div class="kicker">Café · Sabor · Momentos</div>
-      <h1>Tu pausa favorita.<br><em>Tu momento Galuna.</em></h1>
-      <p>
-        Un espacio para disfrutar tus bebidas favoritas,
-        compartir una buena charla y convertir cualquier día
-        en un momento especial.
-      </p>
-      <div class="actions">
-        <a class="btn" href="#menu">☕ Consultar menú</a>
-        <a class="btn btn-outline"
-           href="https://wa.me/523531848178"
-           target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      </div>
-    </div>
-  </section>
+    <!-- PORTADA -->
 
-  <!-- GALERÍA CON CINCO FOTOS Y FRASES DIFERENTES -->
-  <section id="galeria">
-    <div class="wrap">
-      <div class="heading">
-        <div class="kicker">Nuestra esencia</div>
-        <h2>Momentos Galuna</h2>
-        <p>
-          Descubre el encanto del café, los pequeños detalles
-          y esos momentos que vale la pena disfrutar.
-        </p>
-      </div>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
 
-      <div class="gallery">
+          <div class="eyebrow">Un lugar hecho para disfrutar</div>
 
-        <div class="photo">
-          <img
-            src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=1000&q=85"
-            alt="Granos de café tostados"
-            loading="lazy">
-          <h3>El aroma que enamora</h3>
-        </div>
+          <h1>¡Bienvenidos a<br><em>Galuna Coffee!</em></h1>
 
-        <div class="photo">
-          <img
-            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=85"
-            alt="Preparación artesanal de café"
-            loading="lazy">
-          <h3>Un ritual lleno de sabor</h3>
-        </div>
-
-        <div class="photo">
-          <img
-            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=85"
-            alt="Ambiente acogedor de cafetería"
-            loading="lazy">
-          <h3>Tu rincón favorito</h3>
-        </div>
-
-        <div class="photo">
-          <img
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=85"
-            alt="Bebida de café servida"
-            loading="lazy">
-          <h3>Pequeños gustos, grandes momentos</h3>
-        </div>
-
-        <div class="photo">
-          <img
-            src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=85"
-            alt="Interior de una cafetería"
-            loading="lazy">
-          <h3>Siempre hay tiempo para un café</h3>
-        </div>
-
-      </div>
-
-      <p class="note">
-        Fotografías ilustrativas de café y cafeterías.
-        No representan necesariamente el establecimiento real.
-      </p>
-    </div>
-  </section>
-
-  <!-- MENÚ PDF -->
-  <section id="menu" class="soft">
-    <div class="wrap">
-      <div class="heading">
-        <div class="kicker">Algo delicioso te espera</div>
-        <h2>Nuestro menú</h2>
-        <p>
-          Explora nuestro menú desde la página.
-          Consulta las opciones disponibles en el documento PDF.
-        </p>
-      </div>
-
-      <div class="menu-box">
-        <iframe
-          class="pdf"
-          src="menu-galuna.pdf#view=FitH"
-          title="Menú PDF de Galuna Coffee">
-        </iframe>
-
-        <p class="pdf-note">
-          Guarda el menú oficial con el nombre
-          <strong>menu-galuna.pdf</strong> en la misma carpeta
-          que este archivo HTML.<br>
-          Si no se muestra,
-          <a href="menu-galuna.pdf" target="_blank" rel="noopener">
-            abre el menú en otra pestaña
-          </a>.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- UBICACIÓN -->
-  <section id="ubicacion">
-    <div class="wrap">
-      <div class="heading">
-        <div class="kicker">Ven a visitarnos</div>
-        <h2>Encuentra tu lugar</h2>
-        <p>Te esperamos en la plaza de Pajacuarán, Michoacán.</p>
-      </div>
-
-      <div class="cards">
-
-        <article class="card">
-          <div class="icon">⌖</div>
-          <h3>Ubicación</h3>
-          <p>
-            Plaza de Pajacuarán, Michoacán, México.
-            Consulta la ubicación exacta y cómo llegar.
+          <p class="hero-description">
+            Un lugar para disfrutar de un buen café, compartir momentos
+            especiales y hacer de cada visita una experiencia inolvidable.
           </p>
-          <a class="link"
-             href="https://maps.app.goo.gl/Zy5QwYhT2dhSwtwr7"
-             target="_blank" rel="noopener noreferrer">
-            Cómo llegar ↗
-          </a>
-        </article>
 
-        <article class="card">
-          <div class="icon">✆</div>
-          <h3>WhatsApp</h3>
-          <p>
-            Comunícate con nosotros al
-            +52 353 184 8178.
-          </p>
-          <a class="link"
-             href="https://wa.me/523531848178"
-             target="_blank" rel="noopener noreferrer">
-            Enviar mensaje ↗
-          </a>
-        </article>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-gold">
+              Descubre nuestro menú ↗
+            </a>
 
-        <article class="card">
-          <div class="icon">♡</div>
-          <h3>Una experiencia Galuna</h3>
+            <a href="#ubicacion" class="btn btn-outline">
+              Cómo llegar
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span>✦</span>
+            Tu próxima pausa comienza aquí.
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+
+    <section class="welcome" id="nosotros">
+      <div class="container welcome-grid">
+
+        <div class="welcome-photo">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85"
+            alt="Café recién preparado en una mesa"
+            loading="lazy">
+        </div>
+
+        <div class="welcome-text">
+          <div class="eyebrow">Nuestra esencia</div>
+
+          <h2>Más que café,<br>momentos para recordar.</h2>
+
           <p>
-            Ven con amigos, familia o regálate
-            un momento especial para ti.
+            En Galuna Coffee creemos que los mejores momentos se disfrutan
+            sin prisas, con una buena bebida y en compañía de las personas
+            que hacen especial cada día.
           </p>
-          <a class="link" href="#galeria">Ver galería ↓</a>
-        </article>
+
+          <p>
+            Queremos darte la bienvenida a un espacio donde puedas relajarte,
+            conversar, reunirte con amigos o simplemente disfrutar de un
+            momento para ti.
+          </p>
+
+          <p>
+            Gracias por elegirnos y formar parte de nuestra historia.
+            ¡Nos encantará recibirte!
+          </p>
+
+          <div class="welcome-signature">Con cariño, Galuna Coffee.</div>
+        </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- RESEÑAS DE GOOGLE -->
-  <section id="resenas" class="soft">
-    <div class="wrap">
-      <div class="review">
-        <div class="stars" aria-label="Estrellas decorativas">★★★★★</div>
-        <div class="kicker">Tu opinión cuenta</div>
-        <h2>¿Cómo fue tu visita?</h2>
-        <p>
-          Tu opinión ayuda a otras personas a descubrir Galuna Coffee.
-          Comparte tu experiencia en nuestra ficha de Google Maps.
+    <!-- EXPERIENCIA -->
+
+    <section class="experience">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Lo que nos inspira</div>
+          <h2>Disfruta cada momento</h2>
+          <p class="section-intro">
+            Un espacio para reunirte, relajarte y disfrutar de esos pequeños
+            detalles que hacen especial el día.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+
+          <article class="experience-card">
+            <div class="experience-icon">☕</div>
+            <h3>El placer del café</h3>
+            <p>
+              Regálate una pausa, disfruta tu bebida favorita y haz que
+              el momento sea solo tuyo.
+            </p>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-icon">♡</div>
+            <h3>Buenos momentos</h3>
+            <p>
+              El lugar ideal para conversar, compartir risas y crear
+              recuerdos con las personas que quieres.
+            </p>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-icon">✦</div>
+            <h3>Un espacio para ti</h3>
+            <p>
+              Ven a cambiar de ambiente, desconectarte un rato y disfrutar
+              de una experiencia diferente.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+
+    <section class="gallery" id="galeria">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Momentos Galuna</div>
+          <h2>Un vistazo a nuestra experiencia</h2>
+          <p class="section-intro">
+            Cada visita tiene algo especial. Descubre la inspiración detrás
+            de esos momentos que se disfrutan con calma.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85"
+              alt="Ambiente acogedor de una cafetería"
+              loading="lazy">
+            <div class="gallery-label">Un lugar para disfrutar</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85"
+              alt="Taza de café recién servido"
+              loading="lazy">
+            <div class="gallery-label">Amor por el café</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=85"
+              alt="Panadería y repostería"
+              loading="lazy">
+            <div class="gallery-label">Pequeños antojos</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85"
+              alt="Preparación de café"
+              loading="lazy">
+            <div class="gallery-label">Momentos para compartir</div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=85"
+              alt="Bebida de café con leche"
+              loading="lazy">
+            <div class="gallery-label">Tu pausa favorita</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚ -->
+
+    <section class="menu-section" id="menu">
+      <div class="container">
+
+        <div class="menu-card">
+
+          <div>
+            <div class="eyebrow">Descubre nuestros sabores</div>
+            <h2>Tu próximo favorito te espera.</h2>
+
+            <p>
+              Consulta nuestro menú y descubre las opciones disponibles
+              para acompañar tu visita a Galuna Coffee.
+            </p>
+
+            <a href="menu-galuna.pdf"
+              class="btn btn-gold"
+              target="_blank" rel="noopener noreferrer">
+              Ver menú completo ↗
+            </a>
+          </div>
+
+          <div class="menu-preview" id="menuPreview">
+            <div class="menu-placeholder">
+              <div class="cup">☕</div>
+              <h3>Nuestro menú</h3>
+              <p>
+                Aquí puedes consultar los productos de Galuna Coffee.
+                Agrega tu archivo PDF para mostrar el menú completo.
+              </p>
+              <a href="menu-galuna.pdf"
+                class="btn btn-gold"
+                target="_blank" rel="noopener noreferrer">
+                Abrir menú
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+
+    <section class="location" id="ubicacion">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Ven a visitarnos</div>
+          <h2>Estamos aquí para recibirte</h2>
+          <p class="section-intro">
+            Será un gusto darte la bienvenida. Consulta nuestra ubicación,
+            horario y medios de contacto.
+          </p>
+        </div>
+
+        <div class="location-grid">
+
+          <div class="location-details">
+
+            <div class="detail-card">
+              <div class="detail-icon">⌖</div>
+              <div>
+                <h3>Encuéntranos</h3>
+                <p>Plaza, Pajacuarán, Michoacán, México.</p>
+                <p>Consulta la ubicación exacta en Google Maps.</p>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-icon">◷</div>
+              <div>
+                <h3>Horario de atención</h3>
+                <p>Lunes a domingo</p>
+                <p>9:00 a. m. – 10:00 p. m.</p>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-icon">☎</div>
+              <div>
+                <h3>Contacto y WhatsApp</h3>
+                <p>+52 353 184 8178</p>
+                <p>Escríbenos para ponerte en contacto con nosotros.</p>
+              </div>
+            </div>
+
+            <div class="location-actions">
+              <a class="btn btn-gold"
+                href="https://maps.app.goo.gl/Zy5QwYhT2dhSwtwr7"
+                target="_blank" rel="noopener noreferrer">
+                Ver ubicación ↗
+              </a>
+
+              <a class="btn"
+                style="background:#25d366;color:#fff"
+                href="https://wa.me/523531848178"
+                target="_blank" rel="noopener noreferrer">
+                WhatsApp ↗
+              </a>
+            </div>
+
+          </div>
+
+          <div class="map-panel">
+            <div class="map-panel-content">
+              <div class="eyebrow">Pajacuarán, Michoacán</div>
+              <h3>Tu próxima visita comienza aquí.</h3>
+              <p>
+                Abre nuestro enlace de Google Maps para consultar la
+                ubicación y planear tu recorrido.
+              </p>
+              <a class="btn btn-gold"
+                href="https://maps.app.goo.gl/Zy5QwYhT2dhSwtwr7"
+                target="_blank" rel="noopener noreferrer">
+                Cómo llegar ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+
+    <section class="reviews">
+      <div class="container">
+        <div class="eyebrow">Tu opinión nos importa</div>
+        <h2>Ayúdanos a seguir creciendo</h2>
+
+        <div class="stars" aria-label="Valoraciones de clientes">
+          ★★★★★
+        </div>
+
+        <p class="reviews-text">
+          ¿Ya nos visitaste? Nos encantaría conocer tu experiencia.
+          Comparte tu opinión en Google y ayuda a más personas a descubrir
+          Galuna Coffee.
         </p>
-        <a class="btn"
-           href="https://maps.app.goo.gl/Zy5QwYhT2dhSwtwr7"
-           target="_blank" rel="noopener noreferrer">
-          Ver o escribir una reseña ↗
+
+        <a class="btn btn-gold"
+          href="https://maps.app.goo.gl/Zy5QwYhT2dhSwtwr7"
+          target="_blank" rel="noopener noreferrer">
+          Ver ubicación y dejar una reseña ↗
         </a>
-        <p style="font-size:12px;margin-top:20px;margin-bottom:0">
-          Las reseñas se consultan en Google Maps y no aparecen
-          automáticamente dentro de esta página.
-        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- REDES SOCIALES -->
-  <section id="contacto">
-    <div class="wrap">
-      <div class="heading">
-        <div class="kicker">Sigamos conectados</div>
-        <h2>Conecta con Galuna</h2>
+    <!-- REDES SOCIALES -->
+
+    <section class="social">
+      <div class="container">
+        <div class="eyebrow">Sigamos en contacto</div>
+        <h2>Nos vemos en redes</h2>
+
         <p>
-          Síguenos en nuestras redes sociales y mantente
-          al tanto de nuestras novedades.
+          Síguenos y mantente al tanto de las novedades de Galuna Coffee.
         </p>
 
-        <div class="socials">
-          <a href="https://www.facebook.com/share/1ExGeMDrae/"
-             target="_blank" rel="noopener noreferrer">
+        <div class="social-links">
+          <a class="social-link"
+            href="https://www.facebook.com/share/1ExGeMDrae/"
+            target="_blank" rel="noopener noreferrer">
             Facebook ↗
           </a>
 
-          <a href="https://www.instagram.com/coffeegaluna2023?obrf=MTZ2c3o2ZTMxdmRtbQ=="
-             target="_blank" rel="noopener noreferrer">
+          <a class="social-link"
+            href="https://www.instagram.com/coffeegaluna2023/"
+            target="_blank" rel="noopener noreferrer">
             Instagram ↗
           </a>
 
-          <a href="https://wa.me/523531848178"
-             target="_blank" rel="noopener noreferrer">
+          <a class="social-link"
+            href="https://wa.me/523531848178"
+            target="_blank" rel="noopener noreferrer">
             WhatsApp ↗
           </a>
         </div>
       </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a class="brand" href="#inicio">
+            <div class="brand-mark">
+              <svg viewBox="0 0 48 48" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M11 20H32V31C32 37 28 40 22 40H21C15 40 11 36 11 30V20Z"
+                  stroke="currentColor" stroke-width="1.8"/>
+                <path d="M32 23H36C41 23 40 31 32 31"
+                  stroke="currentColor" stroke-width="1.8"/>
+                <path d="M16 14C13 11 18 9 16 6M23 14C20 11 25 9 23 6M30 14C27 11 32 9 30 6"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M8 43H38" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <div>
+              <div class="brand-name">Galuna Coffee</div>
+              <div class="brand-caption">Momentos especiales</div>
+            </div>
+          </a>
+
+          <p class="footer-text">
+            Gracias por visitarnos. Esperamos que cada momento en Galuna
+            Coffee sea una experiencia que quieras repetir.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Explora</h3>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#galeria">Galería</a>
+          <a href="#menu">Nuestro menú</a>
+          <a href="#ubicacion">Ubicación y horario</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Contacto</h3>
+          <a href="https://wa.me/523531848178"
+            target="_blank" rel="noopener noreferrer">
+            +52 353 184 8178
+          </a>
+          <a href="https://www.facebook.com/share/1ExGeMDrae/"
+            target="_blank" rel="noopener noreferrer">
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/coffeegaluna2023/"
+            target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> Galuna Coffee.
+        Todos los derechos reservados.
+      </div>
+
     </div>
-  </section>
+  </footer>
 
-  <!-- LLAMADA FINAL -->
-  <section class="cta">
-    <div class="wrap">
-      <h2>Nos vemos en Galuna Coffee</h2>
-      <p>Tu café, tu espacio, tu momento.</p>
-      <a class="btn"
-         href="https://wa.me/523531848178"
-         target="_blank" rel="noopener noreferrer">
-        Contáctanos por WhatsApp
-      </a>
-    </div>
-  </section>
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
 
-</main>
+  <a class="whatsapp-float"
+    href="https://wa.me/523531848178"
+    target="_blank" rel="noopener noreferrer"
+    aria-label="Contactar a Galuna Coffee por WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30"
+      fill="currentColor" aria-hidden="true">
+      <path d="M16.02 3C8.85 3 3.02 8.76 3.02 15.85c0 2.27.6 4.49 1.73 6.45L3 29l6.94-1.8a13.1 13.1 0 0 0 6.08 1.5h.01c7.16 0 12.99-5.77 12.99-12.86C29.02 8.76 23.19 3 16.02 3Zm0 23.52h-.01c-1.91 0-3.78-.51-5.41-1.48l-.39-.23-4.12 1.07 1.1-3.99-.25-.4a10.62 10.62 0 0 1-1.65-5.64c0-5.85 4.81-10.61 10.72-10.61 2.86 0 5.55 1.1 7.57 3.1a10.49 10.49 0 0 1 3.14 7.51c0 5.85-4.81 10.61-10.7 10.61Zm5.88-7.94c-.32-.16-1.89-.92-2.18-1.03-.29-.1-.5-.16-.7.16-.21.31-.81 1.03-.99 1.24-.18.2-.36.23-.68.07-.32-.16-1.35-.49-2.57-1.55-.95-.82-1.59-1.83-1.78-2.14-.18-.31-.02-.48.14-.63.14-.14.32-.36.48-.54.16-.18.21-.31.32-.52.1-.2.05-.39-.03-.54-.08-.16-.7-1.68-.96-2.3-.25-.6-.51-.52-.7-.53h-.6c-.2 0-.54.08-.83.39-.28.31-1.08 1.04-1.08 2.55 0 1.5 1.1 2.96 1.25 3.16.16.2 2.17 3.27 5.26 4.58.73.31 1.3.5 1.74.64.73.23 1.4.2 1.93.12.59-.09 1.89-.76 2.16-1.49.27-.73.27-1.35.19-1.48-.08-.13-.29-.2-.6-.36Z"/>
+    </svg>
+  </a>
 
-<footer>
-  <div class="wrap footer">
-    <span>© <span id="year">2026</span> Galuna Coffee</span>
-    <span>
-      Pajacuarán, Michoacán ·
-      <a href="#inicio">Volver arriba ↑</a>
-    </span>
-  </div>
-</footer>
+  <script>
+    // Menú de navegación para móviles
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-<script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
 
-// Si una fotografía falla, se oculta para evitar
-// mostrar el icono de imagen rota.
-document.querySelectorAll(".photo img").forEach(function(img) {
-  img.addEventListener("error", function() {
-    img.style.display = "none";
-  });
-});
-</script>
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Cerrar el menú después de elegir una sección
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Año actualizado automáticamente
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Mostrar el PDF del menú si el archivo está disponible.
+    // Guarda menu-galuna.pdf junto a este archivo HTML.
+    const menuFrame = document.getElementById("menuPreview");
+    const pdfUrl = "menu-galuna.pdf";
+
+    fetch(pdfUrl, { method: "HEAD" })
+      .then(response => {
+        if (response.ok) {
+          const iframe = document.createElement("iframe");
+          iframe.src = pdfUrl + "#toolbar=1&navpanes=0";
+          iframe.title = "Menú de Galuna Coffee en PDF";
+          menuFrame.replaceChildren(iframe);
+        }
+      })
+      .catch(() => {
+        // Se mantiene el mensaje de bienvenida al menú.
+      });
+  </script>
 
 </body>
 </html>
